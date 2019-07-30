@@ -22,7 +22,7 @@ class SignUp extends React.Component {
 		event.preventDefault();
 		const { displayName, email, password, confirmPassword } = this.state;
 
-		if (password != confirmPassword) {
+		if (password !== confirmPassword) {
 			alert("passwords don't match");
 			return;
 		}
@@ -57,31 +57,34 @@ class SignUp extends React.Component {
 						name='displayName'
 						type='text'
 						value={displayName}
-						onChange={this.handleChange}
+						handleChange={this.handleChange}
 						label='Display Name'
 						required
 					/>
 					<FormInput
 						name='email'
 						type='email'
+						autoComplete='email'
 						value={email}
-						onChange={this.handleChange}
+						handleChange={this.handleChange}
 						label='Email'
 						required
 					/>
 					<FormInput
 						name='password'
 						type='password'
+						autoComplete='new-password'
 						value={password}
-						onChange={this.handleChange}
+						handleChange={this.handleChange}
 						label='Password'
 						required
 					/>
 					<FormInput
 						name='confirmPassword'
 						type='password'
+						autoComplete='new-password'
 						value={confirmPassword}
-						onChange={this.handleChange}
+						handleChange={this.handleChange}
 						label='Confirm Password'
 						required
 					/>
