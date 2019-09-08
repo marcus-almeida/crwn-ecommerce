@@ -49,7 +49,7 @@ export function* SignInWithEmail({ payload: { email, password } }) {
 
 export function* isUserAuthenticated() {
 	try {
-    const userAuth = getCurrentUser();
+    const userAuth = yield getCurrentUser();
     if (!userAuth) return;
     yield getSnapshotFromUserAuth(userAuth);
 	} catch (error) {
